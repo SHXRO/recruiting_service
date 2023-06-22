@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.name }}</title>
+    <link rel="stylesheet" href="{% static "static/css/style.css" %}">
+    <link rel="stylesheet" href="{% static "static/css/styles.css" %}">
+    <link rel="icon" type="image/x-icon" href="{% static '/static/img/favincon.ico' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<header>
+    <div class="navbar">
+
+        <ul class="links">
+            <li><a href="{% url 'index' %}">Главная</a></li>
+            <li><a href="{% url 'vacancy' %}">Карьера</a></li>
+            <li><a href="https://www.dvgk.ru/">О Компании</a></li>
+        </ul>
+    </div>
+</header>
+<body>
+<section class="home" id="home">
+    <div class="home-text">
+        <p>{{ post.name }}</p> <br> <br>
+        <a href="#contact" class="button">Откликнуться</a>
+    </div>
+    <div class="home-img">
+        <img src="{% static 'static/img/home.png' %}" alt="">
+    </div>
+</section>
+<br>
+<br>
+<br>
+
+<div class="info ">
+    <div class="container">
+        <div class="block1">
+            <div class="snippet">
+                <p>{{ post.snippet }}</p>
+            </div>
+        </div>
+        <div class="block22">
+
+            <p>Зарплата: {{ post.pay }} рублей</p>
+            <p>{{ post.work_busy }}</p>
+            <p>Город: {{ post.city }}</p><br>
+
+        </div>
+    </div>
+    <div class="skip"></div>
+
+    <div>
+        <h3>Что нужно делать:</h3>
+        <ul class="vacancy-duties ul">
+            <li>{{ post.Responsibilities_1 }}</li>
+            <li>{{ post.Responsibilities_2 }}</li>
+            <li>{{ post.Responsibilities_3 }}</li>
+            <li>{{ post.Responsibilities_4 }}</li>
+            <li>{{ post.Responsibilities_5 }}</li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Мы ждем, что вы:</h3>
+        <ul class="vacancy-requirements ul">
+            <li>{{ post.Requirements_1 }} </li>
+            <li>{{ post.Requirements_2 }} </li>
+            <li>{{ post.Requirements_3 }} </li>
+            <li>{{ post.Requirements_4 }} </li>
+            <li>{{ post.Requirements_5 }} </li>
+        </ul>
+    </div>
+
+    <div>
+        <h3>Ключивые навыки:</h3>
+        <ul class="vacancy-skills ul">
+            <li>{{ post.Core_skills_1 }}</li>
+            <li>{{ post.Core_skills_2 }}</li>
+            <li>{{ post.Core_skills_3 }}</li>
+        </ul>
+    </div>
+    <ul class="vacancy-duties ul">
+        <h3>Мы предлагаем:</h3>
+        <li>{{ post.Terms_1 }}</li>
+        <li>{{ post.Terms_2 }}</li>
+        <li>{{ post.Terms_3 }}</li>
+    </ul>
+    <br>
+    <a id="contact"></a>
+    <h3>Расскажите нам о себе:</h3>
+    <form class="form-box" action="{% url 'job_application' post.id %}" method="post" , enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            <tr>
+            </tr>
+            <tr>
+                <td><p>Имя:</p></td>
+                <td>Фамилия:</td>
+            </tr>
+            <tr>
+                <td><input class="input-field" type="text" name="name" maxlength="50" minlength="1"></td>
+                <td><input type="text" class="input-field" name="surname" maxlength="50" minlength="1"></td>
+            </tr>
+            <tr>
+                <td>Телефон:</td>
+                <td>Email:</td>
+            </tr>
+            <tr>
+                <td><input type="tel" name="number" class="input-field" minlength="11" maxlength="12"></td>
+                <td><input type="email" name="email" class="input-field" maxlength="50"></td>
+            </tr>
+            <td>
+                <br>
+            </td>
+            <tr>
+                <td>Резюме</td>
+            </tr>
+            <tr>
+                <td><input type="file" required name="job_application" accept=".docx" maxlength="2097152"
+                           id="file-input"></td>
+            </tr>
+        </table>
+
+        <input type="submit" value="Отправить">
+    </form>
+    <br>
+    <br>
+    <br>
+</div>
+</div>
+</body>
+<div class="container">
+    <footer>
+        <div class="navbar">
+            <p>Сделано в рамках дипломного проекта</p>
+        </div>
+    </footer>
+</div>
+</html>

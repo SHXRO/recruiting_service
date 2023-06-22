@@ -1,0 +1,180 @@
+/* Default styles for all screen sizes */
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.home-text p {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: white;
+    text-shadow: 1px 1px 2px whitesmoke;
+    margin: 40px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.button_vac {
+    padding: 10px 20px;
+    position: relative;
+    margin-left: 150px;
+    background-color: #ffa602;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.home a:hover {
+    color: white;
+}
+
+.vacancy-duties,
+.vacancy-requirements,
+.vacancy-conditions,
+.vacancy-skills {
+    list-style-type: circle;
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.skip {
+    height: 100px;
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 46px;
+    height: 46px;
+    width: 605px;
+    display: block;
+}
+
+.info {
+    font-size: 16px;
+    word-spacing: 0px;
+    text-decoration: none solid rgb(43, 43, 43);
+    height: 1028px;
+    width: 1000px;
+    display: inline-block;
+    margin: 0 0 0 104px;
+}
+
+.snippet {
+    font-size: 18px;
+    line-height: 24px;
+    height: 120px;
+    width: 605px;
+    display: block;
+    word-break: break-word;
+}
+
+.ul {
+    list-style: none;
+}
+
+.ul li:before {
+    content: "—";
+    position: relative;
+    left: -5px;
+    word-break: break-word;
+}
+
+
+
+.block_container {
+    display: flex;
+}
+
+.meta {
+    margin-left: 10px;
+    font-size: 16px;
+    text-decoration: none solid rgb(0, 0, 0);
+    word-spacing: 0px;
+    height: 50vh;
+    width: 100%;
+    min-height: auto;
+    min-width: auto;
+    display: block;
+}
+
+.form-box{
+}
+
+.form-box input[type = "text"],.form-box input[type = "password"],.form-box input[type = "email"],.form-box input[type = "tel"]{
+  border:0;
+  background: none;
+  display: block;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #ffa602;
+  padding: 14px 15px;
+  width: 200px;
+  outline: none;
+  transition: 0.25s;
+}
+.form-box input[type='file']{
+    border: none;
+  background-color: transparent;
+}
+
+.form-box input[type = "submit"]{
+  border:0;
+  background: none;
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  border: 2px solid #ffa602;
+  width: 230px;
+  height: 30px;
+  outline: none;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.form-box input[type = "submit"]:hover{
+  background: #ff9900;
+}
+.container {
+  display: flex;
+}
+
+.block1, .block22 {
+  display: inline-block;
+  margin: 10px
+}
+.block22{
+    margin-left: 80px;
+}
+#file-input {
+  width: 350px;
+  max-width: 100%;
+  color: #444;
+  padding: 2px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #ffa602;
+}
+
+#file-input::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #ffa602;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+#file-input::file-selector-button:hover {
+  background: #c77703;
+}

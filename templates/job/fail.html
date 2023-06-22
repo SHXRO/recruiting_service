@@ -1,0 +1,43 @@
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Что-то пошло не так</title>
+    <link rel="stylesheet" href="{% static "static/css/styles.css" %}">
+    <link rel="icon" type="image/x-icon" href="{% static '/static/img/favincon.ico' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <header>
+        <div class="navbar">
+            <ul class="links">
+                <li><a href="{% url 'index' %}">Главная</a></li>
+                <li><a href="{% url 'vacancy' %}">Карьера</a></li>
+                <li><a href="https://www.dvgk.ru/">О Компании</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-text">
+        <span>Получи работу</span> <br>
+        <span>в перспективной</span><br>
+        <span>энергокомпании</span>
+        <br> <br> <br>
+            <a href="{% url 'vacancy' %}" class="button">Смотреть вакансии</a>
+        </div>
+        <div class="home-img">
+            <img src="{% static 'static/img/home.png' %}" alt="">
+        </div>
+    </section>
+
+	<h1>Что-то пошло не так...</h1>
+</body>
+</html>

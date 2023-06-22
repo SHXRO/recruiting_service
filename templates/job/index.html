@@ -1,0 +1,147 @@
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карьера </title>
+    <link rel="stylesheet" href="{% static "static/css/styles.css" %}">
+    <link rel="icon" type="image/x-icon" href="{% static '/static/img/favincon.ico' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <ul class="links">
+                <li><a href="{% url 'index' %}">Главная</a></li>
+                <li><a href="{% url 'vacancy' %}">Карьера</a></li>
+                <li><a href="https://www.dvgk.ru/">О Компании</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-text">
+        <span>Получи работу</span> <br>
+        <span>в перспективной</span><br>
+        <span>энергокомпании</span>
+        <br> <br> <br>
+            <a href="{% url 'vacancy' %}" class="button">Смотреть вакансии</a>
+        </div>
+        <div class="home-img">
+            <img src="{% static 'static/img/home.png' %}" alt="">
+        </div>
+    </section>
+
+
+    <h1>Мы предоставляем</h1>
+    <section class="vac">
+        <div class="card">
+            <div class="image1"></div>
+            <div class="content">
+                    <span class="title">
+                        Бесплатный ДМС
+                    </span>
+
+                <p class="desc">
+                    Мы глубоко убеждены в том, что здоровье наших сотрудников - это один из самых ценных активов нашей компании, и поэтому мы делаем все возможное, чтобы обеспечить нашим сотрудникам доступ к высококачественной медицинской помощи. Добровольное медицинское страхование - одна из наших инициатив, которую мы предлагаем нашим сотрудникам
+                </p>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="image2"></div>
+            <div class="content">
+                    <span class="title">
+                        Компенсация оплаты теплоэлектроэнергии
+                    </span>
+
+
+                <p class="desc">
+                    Мы гордимся тем, что наша компания заботится о благополучии и комфорте наших сотрудников, и мы предлагаем ряд льготных программ, которые помогают им снизить расходы на жизненно важные услуги. В частности, мы предоставляем нашим сотрудникам 50% компенсации за оплату электроэнергии
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="image3"></div>
+            <div class="content">
+                    <span class="title">
+                        Работу в энергокомпании
+                    </span>
+                </a>
+
+                <p class="desc">
+                    АО «ДГК» – четвертая по величине установленной мощности территориальная генерирующая компания России
+                    и крупнейший участник энергетического рынка Дальнего Востока. Зона деятельности компании охватывает
+                    1/10 часть территории нашей страны
+                </p>
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="card">
+            <div class="image4"></div>
+            <div class="content">
+                    <span class="title">
+                        Вакансии по всему Дальнему Востоку
+                    </span>
+                    <p class="desc">
+                        Компания производит тепловую и электрическую энергию, а также обеспечивает централизованное
+                        теплоснабжение потребителей в районах расположения электростанций в Хабаровском и Приморском
+                        краях, Амурской области, Еврейской автономной области и южном районе Республики Саха (Якутия)
+                    </p>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="image5"></div>
+            <div class="content">
+                    <span class="title">
+                        Заплаты до 120 тыс в месяц
+                    </span>
+
+                <p class="desc">
+                    АО «ДГК» – является работодателем, который готов предоставить своим квалифицированным сотрудникам
+                    отличные условия оплаты труда. Наша компания придерживается политики, направленной на привлечение и
+                    удержание высококвалифицированных специалистов, поэтому мы готовы предложить конкурентоспособную
+                    заработную плату
+                </p>
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="image6"></div>
+            <div class="content">
+                    <span class="title">
+                        Работу в дружном коллективе
+                    </span>
+
+                <p class="desc">
+                    Наша компания гордится тем, что создала дружный коллектив, в котором каждый сотрудник ощущает
+                    поддержку и уважение со стороны своих коллег и руководства. Мы придаем большое значение развитию
+                    командного духа и сотрудничества между сотрудниками, потому что верим, что только в такой атмосфере
+                    можно достичь максимальных результатов и реализовать свой потенциал.
+                </p>
+                </p>
+            </div>
+        </div>
+
+
+    </section>
+</body>
+<div class="container">
+    <footer>
+        <div class="navbar">
+            <p>Сделано в рамках дипломного проекта</p>
+        </div>
+    </footer>
+</div>
+</html>

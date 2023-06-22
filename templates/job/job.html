@@ -1,0 +1,109 @@
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карьера </title>
+    <link rel="stylesheet" href="{% static "static/css/styles.css" %}">
+    <link rel="icon" type="image/x-icon" href="{% static '/static/img/favincon.ico' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+<div class="container">
+    <header>
+        <div class="navbar">
+
+            <ul class="links">
+                <li><a href="{% url 'index' %}">Главная</a></li>
+                <li><a href="{% url 'vacancy' %}">Карьера</a></li>
+                <li><a href="https://www.dvgk.ru/">О Компании</a></li>
+            </ul>
+        </div>
+    </header>
+</div>
+<section class="home" id="home">
+    <div class="home-text">
+        <span>Получи работу</span> <br>
+        <span>в перспективной</span><br>
+        <span>энергокомпании</span>
+        <br> <br> <br>
+    </div>
+    <div class="home-img">
+        <img src="{% static 'static/img/home.png' %}">
+    </div>
+</section>
+<h1>Наши вакансии</h1>
+<h1>Выберите регион</h1>
+<div class="button-container">
+{% block menu %}
+
+    {% for razdel in menu %}
+        <button class="button2">
+            <a href="/{{ razdel.url }}"> {{ razdel.name }}</a>
+        </button>
+
+    {% endfor %}
+{% endblock %}
+</div>
+
+    {% if not vacancy_list%}
+        <div class="image-container">
+        <img class='img' src="{% static '/static/img/404.png' %}">
+        </div>
+        <p class="no_vacancy">В данный момент нет доступных вакансий</p>
+    {% else %}
+
+{% for vacancy in vacancy_list %}
+    {% if vacancy.available %}
+    <section>
+
+        <div class="vac">
+
+            <div class="card_vac">
+                <div class="card__descr-wrapper_vac">
+
+                    <p class="card__title_vac">
+                        <a href="{% url 'job_detail' pk=vacancy.id %}">{{ vacancy.name }}</a>
+                    </p>
+                    <a href="{% url 'job_detail' pk=vacancy.id %}" >
+                    <p class="card__city_vac">
+                        {{ vacancy.city }}
+                    </p>
+                    <p class="card__title_pay_vac">
+                        {{ vacancy.pay }} Р
+                    </p>
+                    <p class="card__descr_vac"><br>
+                        {{ vacancy.snippet }}
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+</a>
+    </section>
+
+    {% else %}
+         <p class="no_vacancy">В данный момент нет доступных вакансий</p>
+{% endif %}
+{% endfor %}
+ {% endif %}
+</div>
+</section>
+</div>
+
+
+<div class="container">
+    <footer>
+        <div class="navbar">
+            <p>Сделано в рамках дипломного проекта</p>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
